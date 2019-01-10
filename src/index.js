@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 //setting 
-app.set('port', process.env.PORT || 4000 );
+app.set('port', process.env.PORT || 4001 );
 app.set('views', path.join(__dirname,'views')); //Node knows the views folder
 //For the themplate handlebars
 app.engine('.hbs', exphbs({

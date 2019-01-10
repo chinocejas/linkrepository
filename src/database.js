@@ -13,11 +13,14 @@ pool.getConnection((err, connection) => {
             console.log('Database has to many connections');
         }
         if (err.code === 'ECONNREFUSED'){
-            console.log('Database connection was refused');
+            console.log('Database connection was refused!');
         }
     }
-    if(connection) connection.release();
-    console.log('Database is connect');   
+    //console.log(connection);
+    if(connection){
+        connection.release();
+        console.log('Database is connect'); 
+    }   
 });
 
 pool.query = promisify(pool.query); //for each database consult convert  promisify to pool query 
